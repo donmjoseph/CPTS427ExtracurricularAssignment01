@@ -1,0 +1,230 @@
+/* ── Card shell ── */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Color stripe on left via box-shadow so it doesn't affect layout */
+.card {
+  border-left: 4px solid var(--stripe-color, #3b82f6);
+}
+
+.withdrawn {
+  --stripe-color: #ef4444;
+  opacity: 0.75;
+}
+
+.typeDocument  { --stripe-color: #3b82f6; }
+.typeComment   { --stripe-color: #0891b2; }
+.typeDocket    { --stripe-color: #7c3aed; }
+
+/* ── Inner padding ── */
+.body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Top row ── */
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--badge-color, #2563eb);
+  background: color-mix(in srgb, var(--badge-color, #2563eb) 10%, white);
+  border: 1px solid color-mix(in srgb, var(--badge-color, #2563eb) 25%, transparent);
+}
+
+.withdrawnBadge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #b91c1c;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+}
+
+.openBadge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #166534;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+}
+
+.agencyChip {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #0f172a;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+/* ── Title ── */
+.title {
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.45;
+}
+
+/* ── Meta row ── */
+.meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.77rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.metaItem svg {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+/* ── Comment text ── */
+.commentText {
+  margin: 0;
+  padding: 10px 14px;
+  border-left: 3px solid #bae6fd;
+  font-size: 0.84rem;
+  color: #334155;
+  line-height: 1.65;
+  font-style: italic;
+  background: #f0f9ff;
+  border-radius: 0 8px 8px 0;
+}
+
+.commentOn {
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+/* ── Action buttons ── */
+.actionRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #475569;
+  transition: all 0.15s;
+}
+
+.actionBtn:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.actionBtnActive {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+.actionBtnComment {
+  color: #166534;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.actionBtnComment:hover {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+
+/* ── Footer / link ── */
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 16px;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+}
+
+.viewLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 7px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.viewLink:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  transform: translateX(1px);
+}

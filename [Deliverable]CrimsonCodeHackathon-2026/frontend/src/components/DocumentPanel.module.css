@@ -1,0 +1,171 @@
+.panel {
+  margin-top: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loadingRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #cbd5e1;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #e0f0ff;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.panelTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.closeBtn:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+.summaryText {
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.error {
+  padding: 12px 16px;
+  color: #dc2626;
+  font-size: 0.85rem;
+}
+
+/* Q&A section */
+.qaSection {
+  padding: 12px 16px;
+}
+
+.qaLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 10px;
+}
+
+.qaEntry {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.qaQuestion {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin: 0 0 6px;
+}
+
+.qaAnswer {
+  /* SimpleMarkdown styles already handle text */
+}
+
+.qaForm {
+  display: flex;
+  gap: 8px;
+}
+
+.qaInput {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-family: inherit;
+  background: white;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.qaInput:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+
+.qaInput::placeholder {
+  color: #94a3b8;
+}
+
+.qaBtn {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 60px;
+  justify-content: center;
+}
+
+.qaBtn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.qaBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.miniSpinner {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
